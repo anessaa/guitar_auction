@@ -1,0 +1,39 @@
+<h1>Sign Up</h1>
+    <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+    <div>
+        <h3>Form is invalid</h3> 
+        <ul>
+            <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+    <div>
+        <%= f.label :"First_Name" %>
+        <%= f.text_field :first_name %>
+    </div>
+    <div>
+        <%= f.label :"Last_name" %>
+        <%= f.text_field :last_name %>
+    </div>
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    <div>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+    </div>
+    <div>
+      <%= f.file_field :image %><br><br>    
+    </div>
+    
+    <div><%= f.submit 'Register' %></div>
+    <% end %>
