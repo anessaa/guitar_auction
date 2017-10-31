@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :bids, only: [:create, :destroy]
   resources :comments, only: [:create, :destroy]
   end
+  get '/history', to: 'guitars#history'
+  
 end

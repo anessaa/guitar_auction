@@ -6,6 +6,5 @@ class Guitar < ApplicationRecord
   has_many :bids
 
   scope :active, -> {where('auction_end > ?', Date.today)}
-
- 
+  scope :past, -> {where('auction_end < ?', Date.today)}
 end
