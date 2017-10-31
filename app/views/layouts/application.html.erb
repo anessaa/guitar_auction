@@ -13,6 +13,10 @@
         <p class="welcome">
         <%= image_tag "#{current_user.image}" %> Welcome, <%= current_user.first_name %>
         &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Account Settings', user_path(current_user) %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Home', '/' %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
         <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
         </p>
       <% else %>
@@ -23,6 +27,7 @@
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <%= link_to 'Home', '/' %>
       </p>
+
       <% end %>
     <%= yield %>
   </body>

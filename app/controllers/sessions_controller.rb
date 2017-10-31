@@ -13,6 +13,10 @@ class SessionsController < ApplicationController
         end
     end
 
+    def show 
+        @user = User.find_by(email: params[:email])
+    end
+
     def destroy
         session[:user_id] = nil
         redirect_to root_path, notice: "Logged out!"

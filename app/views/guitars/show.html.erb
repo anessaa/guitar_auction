@@ -1,0 +1,12 @@
+<h1><%= @guitar.brand %> <%= @guitar.style %> </h1>
+<h3>Auction Ends: <%= @guitar.auction_end.strftime("%B #{@guitar.auction_end.day.ordinalize}, %Y") %> </h3>
+<br>
+<div>
+    <%= image_tag "#{@guitar.image}" %>
+</div>
+<div>
+    <%= form_for [@guitar, @bid] do |f| %>
+        <label>Bid: </label> <%= f.text_field :amount %>
+        <%= f.submit 'Bid!' %> 
+    <% end %>
+</div>

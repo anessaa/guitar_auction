@@ -19,4 +19,6 @@
      max-height: 50px;
      height: -webkit-fill-available;
  }
-
+.guitar_header {
+    text-decoration: underline;
+}

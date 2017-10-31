@@ -1,0 +1,24 @@
+<h1>Edit Account</h1>
+<%= form_for @user, url: sessions_path('show'), method: :get, html: { multipart: true } do |f| %>
+    <div>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+    </div>
+    <div>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+    </div>
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+    <%= f.submit "Update" %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+     <%= link_to 'Back', user_path(current_user) %>
+
+<% end %>
+
