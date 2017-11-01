@@ -4,6 +4,7 @@ class Guitar < ApplicationRecord
   
   belongs_to :user
   has_many :bids
+  has_many :comments
 
   scope :active, -> {where('auction_end > ?', Date.today)}
   scope :past, -> {where('auction_end < ?', Date.today)}

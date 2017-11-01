@@ -13,11 +13,15 @@
     <% end %>
 </div><br>
 <div>
-<h2>Make a Bid!</h2>
-    <%= form_for [@guitar, @bid] do |f| %>
-        <label>Bid: </label> <%= f.text_field :amount %>
+    <% if !@past_bid %>
+    <h2>Make a Bid!</h2>
+        <%= form_for [@guitar, @bid] do |f| %>
+            <label>Bid: </label> <%= f.text_field :amount %>
         <%= f.submit 'Bid!' %> 
-    <% end %>
+        <% end %>
+    <% else %>
+        <p>Bidding is closed!</p>
+        <% end %>
 </div>
 
 <h2>Comments</h2>
@@ -26,11 +30,13 @@
         <%= f.submit 'Comment' %>
     <% end %>
 <ul>
-    <% @comments.each do |l| %>
-        <li><label><strong><%= l.user.first_name %></strong>: <%= l.remark %> - <%= l.created_at.strftime('%I:%M%P, %m/%d/%y') %></li>    
-        <% end %>
+    <% @guitar.comments.each do |comment| %>
+        <li>
+            <strong><%= comment.user.first_name %></strong>: <%= comment.remark %> - <%= comment.created_at.strftime('%I:%M%P, %m/%d/%y') %>
+            <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %>
+        </li>
+    <% end %>
 
 </ul>
-
 
 

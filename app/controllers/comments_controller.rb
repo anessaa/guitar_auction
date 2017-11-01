@@ -6,8 +6,14 @@ class CommentsController < ApplicationController
         @comment.save
         redirect_to guitar_path(params[:guitar_id]) 
     end
-    def show 
+    
+    def destroy
+        comment = Comment.find(params[:id]) 
+        guitar = comment.guitar
+        comment.destroy
+        redirect_to guitar_path(guitar)
     end
+
     private 
 
     def comment_params

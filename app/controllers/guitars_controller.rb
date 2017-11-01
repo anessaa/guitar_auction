@@ -35,7 +35,7 @@ class GuitarsController < ApplicationController
         @comment = Comment.new
         @bid = Bid.new
         @highest_bid = @guitar.bids.order("amount DESC").first
-        @comments = Comment.all
+        @past_bid = Guitar.past
     end
 
     private 
