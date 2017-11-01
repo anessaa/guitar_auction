@@ -24,7 +24,7 @@
     <%= f.submit "Update" %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
 <% end %>
-    <%= link_to 'Delete', guitar_path(guitar), method: :delete if guitar.user == current_user %></li>
+    <%= link_to 'Delete', guitar_path(guitar), method: :delete %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Back', guitars_path %>
 
