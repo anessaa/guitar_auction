@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101191555) do
+ActiveRecord::Schema.define(version: 20171101202428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 20171101191555) do
     t.bigint "guitar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["guitar_id"], name: "index_bids_on_guitar_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 20171101191555) do
   end
 
   add_foreign_key "bids", "guitars"
+  add_foreign_key "bids", "users"
   add_foreign_key "comments", "guitars"
   add_foreign_key "comments", "users"
   add_foreign_key "guitars", "users"
