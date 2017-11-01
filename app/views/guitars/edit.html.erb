@@ -22,9 +22,10 @@
         <%= f.file_field :image %>
     </div>
     <%= f.submit "Update" %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
 <% end %>
-    <%= link_to 'Delete', guitar_path(@guitar), method: :delete %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <%= link_to 'Delete', guitar_path(@guitar), method: :delete, data: { confirm: 'Are you sure?' } %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Back', guitars_path %>
 
