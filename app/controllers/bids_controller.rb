@@ -7,7 +7,11 @@ class BidsController < ApplicationController
         redirect_to guitar_path(params[:guitar_id])
     end
 
-    def show
+    def destroy
+        bid = Bid.find(params[:id]) 
+        guitar = bid.guitar
+        bid.destroy
+        redirect_to guitar_path(guitar)
     end
 
 

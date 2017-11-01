@@ -30,6 +30,18 @@ class GuitarsController < ApplicationController
         end
     end
 
+    def edit
+        @guitar = Guitar.find(params[:id])
+    end
+
+    def update 
+        if @guitar.update_attributes(guitar_params)
+            redirect_to guitar_path
+        else
+            render :edit
+        end
+    end
+
     def show
         @guitar = Guitar.find(params[:id])
         @comment = Comment.new

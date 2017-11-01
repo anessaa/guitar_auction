@@ -1,1 +1,29 @@
 <h1>Edit Guitar Auction</h1>
+
+<%= form_for @guitar, url: guitars_path('edit'), method: :get, html: { multipart: true } do |f| %>
+    <div>
+        <%= f.label :brand %>
+        <%= f.text_field :brand %>
+    </div>
+    <div>
+        <%= f.label :style %>
+        <%= f.text_field :style %>
+    </div>
+    <div>
+        <%= f.label :start_bid %>
+        <%= f.text_field :start_bid %>
+    </div>
+    <div>
+        <%= f.label :auction_end %>
+        <%= f.date_select :auction_end %>
+    </div>
+    <div>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+    <%= f.submit "Update" %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+     <%= link_to 'Back', guitars_path %>
+
+<% end %>
+

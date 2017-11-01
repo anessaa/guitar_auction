@@ -22,3 +22,10 @@
 .guitar_header {
     text-decoration: underline;
 }
+.edit_guitar {
+    display: inline-block;
+}
+header {
+    text-align: right;
+    padding-right: 300px;
+}

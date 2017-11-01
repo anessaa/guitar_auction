@@ -1,4 +1,5 @@
-<h1><%= @guitar.brand %> <%= @guitar.style %> </h1>
+<h1 class="edit_guitar"><%= @guitar.brand %> <%= @guitar.style %> </h1> <%= link_to 'Edit Account', edit_guitar_path %>
+
 <h3>Auction Ends: <%= @guitar.auction_end.strftime("%B %d, %Y") %> </h3>
 <br>
 <label><strong>Bid Start Amount: </strong></label> $<%= @guitar.start_bid %> 
@@ -13,20 +14,26 @@
     <% end %>
 </div><br>
 <div>
-    <% if !@past_bid %>
+   
     <h2>Make a Bid!</h2>
         <%= form_for [@guitar, @bid] do |f| %>
             <label>Bid: </label> <%= f.text_field :amount %>
         <%= f.submit 'Bid!' %> 
         <% end %>
-    <% else %>
-        <p>Bidding is closed!</p>
-        <% end %>
+
 </div>
 
+<h2>All Bids</h2>
+<ul>
+<% @guitar.bids.each do |bid| %>
+    <li><strong><%= bid.user.first_name %></strong>: $<%= bid.amount %>
+    <%= link_to 'Delete', bid_path(bid), method: :delete if bid.user == current_user %></li>
+
+<% end %>
+</ul>
 <h2>Comments</h2>
     <%= form_for [@guitar, @comment] do |f| %>
-        <label>Make Comment: </label> <%= f.text_field :remark %>
+        <strong>Make Comment: </strong> <%= f.text_field :remark %>
         <%= f.submit 'Comment' %>
     <% end %>
 <ul>
