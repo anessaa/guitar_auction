@@ -49,10 +49,13 @@ class GuitarsController < ApplicationController
         @highest_bid = @guitar.bids.order("amount DESC").first
         @past_bid = Guitar.past
     end
+
     def destroy
-        @guitar = Guitar.destroy
+        @guitar = Guitar.find(params[:id])
+        @guitar.destroy
         redirect_to user_path
     end
+    
     private 
 
     def guitar_params
