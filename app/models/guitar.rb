@@ -3,8 +3,9 @@ class Guitar < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   belongs_to :user
-  has_many :bids
-  has_many :comments
+  has_many :bids, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
 
   scope :active, -> {where('auction_end > ?', Date.today)}
   scope :past, -> {where('auction_end < ?', Date.today)}
