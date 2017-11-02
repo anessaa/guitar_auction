@@ -1,7 +1,9 @@
-<h1>Past Auctions</h1>
+<h1 class="jumbotron" style="font-size: 5em">Past Auctions</h1>
+
 <% @guitars.each do |guitar| %>
-    <div>
-        <h1 class="guitar_header"><%= link_to(guitar.brand, guitar_path(guitar)) %> <%= link_to(guitar.style, guitar_path(guitar)) %> </h1>
+    <div class="jumbotron">
+
+        <h2 class="guitar_header"><%= link_to(guitar.brand, guitar_path(guitar)) %> <%= link_to(guitar.style, guitar_path(guitar)) %></h2>
         <h3>Auction Ends: <%= guitar.auction_end.strftime("%B #{guitar.auction_end.day.ordinalize}, %Y") %> </h3>
         <div>
         <%= image_tag "#{guitar.image}" %>

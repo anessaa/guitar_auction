@@ -1,5 +1,6 @@
-<h1>Edit Guitar Auction</h1>
+<h1 class="jumbotron" style="font-size: 5em">Edit Guitar Auction</h1>
 
+<div class="jumbotron" style="text-align:center;">
 <%= form_for @guitar, url: guitars_path('edit'), method: :get, html: { multipart: true } do |f| %>
     <div>
         <%= f.label :brand %>
@@ -28,3 +29,4 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Back', guitars_path %>
 
+</div>

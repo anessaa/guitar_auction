@@ -12,28 +12,17 @@
   </head>
 
   <body class="container">
-  <nav>
-      
-      <% if current_user%>
-        <p class="welcome">
-          <%= image_tag "#{current_user.image}" %> Welcome, <%= current_user.first_name %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'Account Settings', user_path(current_user) %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'Home', '/' %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-        </p>
-      <% else %>
-        <p>
-          <%= link_to 'Log In', login_path %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'Sign Up', new_user_path %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'Home', '/' %>
-        </p>
-      <% end %>
-   
+  <div class="topnav" id="myTopnav">
+  <% if current_user%>
+    <%= image_tag "#{current_user.image}"%><span>Welcome, <%= current_user.first_name %></span>
+    <%= link_to 'Account Settings', user_path(current_user), class: 'nav-item' %>
+    <%= link_to 'Home', '/' %>
+    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+  <% else %>
+    <%= link_to ' Log In', login_path %>
+    <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
+</div>
     <%= yield %>
   </body>
 </html>
