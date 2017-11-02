@@ -47,7 +47,8 @@ class GuitarsController < ApplicationController
         @comment = Comment.new
         @bid = Bid.new
         @highest_bid = @guitar.bids.order("amount DESC").first
-        @past_bid = Guitar.past
+        @starting_bid = @guitar.start_bid
+        @past_bid = Date.today > @guitar.auction_end
     end
 
     def destroy

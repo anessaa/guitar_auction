@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy, :show]
   get '/login', to: 'sessions#new'
   resources :guitars, shallow: true do
-  resources :bids, only: [:create, :destroy]
-  resources :comments, only: [:create, :destroy]
+    resources :bids, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
   get '/history', to: 'guitars#history'
   
