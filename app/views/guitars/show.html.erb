@@ -19,7 +19,7 @@
             <% if @past_bid %>
                 <p>Bidding is closed</p>
             <% else %>
-                <h2>Mak e a Bid!</h2>
+                <h2>Make a Bid!</h2>
             <%= form_for [@guitar, @bid] do |f| %>
                 <label>Bid: </label> <%= f.text_field :amount, required: true %>
                     <%= f.submit 'Bid!' %> 
