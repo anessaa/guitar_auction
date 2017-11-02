@@ -1,7 +1,8 @@
 <h1 class="jumbotron" style="font-size: 5em">My Account</h1>
 <div class="jumbotron">
 <%= image_tag "#{current_user.image}", class:'edit_account img-thumbnail' %>
-<div class="acct_settings_header">
+
+<div class="acct_settings_header jumbotron">
     <%= link_to 'Edit Account', edit_user_path(current_user.id) %> <br>
     <%= link_to 'Add an Auction', new_guitar_path(current_user.id) %> <br>
 </div>
