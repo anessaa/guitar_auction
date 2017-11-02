@@ -25,3 +25,14 @@
 .edit_guitar {
     display: inline-block;
 }
+.edit_account {
+    width: 350px;
+}
+.acct_settings_header {
+    display: inline-block;
+}
+header {
+    text-align: right;
+    margin: 75px 75px;
+    
+}

@@ -12,7 +12,7 @@
   </head>
 
   <body class="container">
-  <header>
+  <nav>
       
       <% if current_user%>
         <p class="welcome">
@@ -33,7 +33,7 @@
           <%= link_to 'Home', '/' %>
         </p>
       <% end %>
-    </header>
+   
     <%= yield %>
   </body>
 </html>

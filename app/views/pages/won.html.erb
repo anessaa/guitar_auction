@@ -1,0 +1,15 @@
+<h1 class="acct_settings_header">Won Auctions / </h1>  <h1 class="acct_settings_header">Created Auctions</h1>
+
+
+    <% @guitars.each do |guitar| %>
+        <div  class="panel panel-default">
+        <div class="panel-body">
+        <ul>
+            <li><%= guitar.brand %> - <%= guitar.style %></li>
+            <li>Auction Ended: <%= guitar.auction_end.strftime("%B %d, %Y") %></li>
+        </ul>
+            <%= image_tag "#{guitar.image}" %>
+         </div>
+    </div>
+    
+    <% end %>

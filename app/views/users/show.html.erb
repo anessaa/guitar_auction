@@ -1,5 +1,21 @@
 <h1>My Account</h1>
 
-<%= link_to 'Edit Account', edit_user_path(current_user.id) %> <br>
-<%= link_to 'Add an Auction', new_guitar_path(current_user.id) %>
+<%= image_tag "#{current_user.image}", class:'edit_account img-thumbnail' %>
+<div class="acct_settings_header">
+    <%= link_to 'Edit Account', edit_user_path(current_user.id) %> <br>
+    <%= link_to 'Add an Auction', new_guitar_path(current_user.id) %> <br>
+    <a href="#">Won / Created Auctions</a> <br>
+</div>
 
+<h1>Won Auctions</h1>
+<% @guitars_won.each do |guitar| %>
+    <div  class="panel panel-default">
+        <div class="panel-body">
+            <ul>
+                <li><%= guitar.brand %> - <%= guitar.style %></li>
+                <li>Auction Ended: <%= guitar.auction_end.strftime("%B %d, %Y") %></li>
+            </ul>
+            <%= image_tag "#{guitar.image}" %>
+        </div>
+    </div>
+<% end %>
