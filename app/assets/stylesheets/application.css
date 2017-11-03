@@ -17,8 +17,8 @@
 .hero {
     align-content: center;
     position: absolute;
-    top: 28%;
-    left: 38%;
+    top: 25%;
+    left: 44%;
     transform: translate(-50%, -50%);
 }
 .guitar_header {
