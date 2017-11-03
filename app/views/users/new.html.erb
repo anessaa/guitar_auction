@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1 class="jumbotron" style="font-size: 3em">Sign Up</h1>
 
     <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
@@ -11,30 +11,35 @@
         </ul>
     </div>
     <% end %>
-
+    <br>
     <div>
         <%= f.label :"First_Name" %>
         <%= f.text_field :first_name %>
     </div>
+    <br>
     <div>
         <%= f.label :"Last_name" %>
         <%= f.text_field :last_name %>
     </div>
+    <br>
     <div>
         <%= f.label :email %>
         <%= f.text_field :email %>
     </div>
+    <br>
     <div>
         <%= f.label :password %>
         <%= f.password_field :password %>
     </div>
+    <br>
     <div>
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %>
     </div>
+    <br>
     <div>
       <%= f.file_field :image %><br><br>    
     </div>
-    
+
     <div><%= f.submit 'Register', class:"btn-success" %></div>
     <% end %>

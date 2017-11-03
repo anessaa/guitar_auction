@@ -1,11 +1,12 @@
-<h1>LOG IN</h1>
+<h1 class="jumbotron" style="font-size: 3em">LOG IN</h1>
 <id="alert"><%= alert %></p>
-
+<br>
 <%= form_tag sessions_path do %>
   <div>
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
   </div>
+  <br>
   <div>
     <%= label_tag :password %>
     <%= password_field_tag :password %>
