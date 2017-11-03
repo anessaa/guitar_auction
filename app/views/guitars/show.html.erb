@@ -1,40 +1,50 @@
-  <div  class="panel panel-default">
-        <div class="panel-body">
-            <h1 class="edit_guitar "><%= @guitar.brand %> <%= @guitar.style %> </h1> <%= link_to 'Edit Guitar', edit_guitar_path if @guitar.user == current_user %>
-
-                <h3>Auction Ends: <%= @guitar.auction_end.strftime("%B %d, %Y") %> </h3><br>
-                <label><strong>Bid Start Amount: </strong></label> $<%= @guitar.start_bid %> 
+<style>
+    p {
+        font-size: 1.3em;
+        display: inline-block;
+    }
+    h4 {
+        display: inline-block;
+    }
+    h1 {
+        font-size: 3em;
+    }
+</style>
+<div  class="panel panel-default">
+    <div class="panel-body">
+        <h1 class="edit_guitar"><%= @guitar.brand %> <%= @guitar.style %> </h1> <%= link_to 'Edit Guitar', edit_guitar_path if @guitar.user == current_user %>
+            <h3>Auction Ends: <%= @guitar.auction_end.strftime("%B %d, %Y") %> </h3><br>
+            <h4>Bid Start Amount: &nbsp</h4><p>$ <%= @guitar.start_bid %></p> 
+        <br>
         <div>
-                <%= image_tag "#{@guitar.image}" %>
+            <%= image_tag "#{@guitar.image}" %>
         </div>
         <div>
             <% if @highest_bid %>
-                <label><strong>Current Highest Bidder: </strong></label> <%= @highest_bid.user.first_name %> - $<%= @highest_bid.amount %>
+                <h4>Current Highest Bidder: </h4> <p><%= @highest_bid.user.first_name %> - $<%= @highest_bid.amount %></p>
             <% else %>  
                 <p>No bids have been submitted</p>
             <% end %>
         </div><br>
-
         <div>
             <% if @past_bid %>
                 <p>Bidding is closed</p>
             <% else %>
-                <h2>Make a Bid!</h2>
+                <h2 style="text-decoration:underline;">Make a Bid!</h2><br>
             <%= form_for [@guitar, @bid] do |f| %>
-                <label>Bid: </label> <%= f.text_field :amount, required: true %>
+                <strong>Bid: </strong> <%= f.text_field :amount, required: true %>
                     <%= f.submit 'Bid!' %> 
             <% end %>
         </div>
             <% end %>
-
-        <h2>All Bids</h2>
+        <h2 style="text-decoration:underline;">All Bids</h2><br>
             <ul>
                 <% @guitar.bids.each do |bid| %>
                     <li><strong><%= bid.user.first_name %></strong>: $<%= bid.amount %>
                     <%= link_to 'Delete', bid_path(bid), method: :delete if bid.user == current_user %></li>
                     <% end %>
             </ul>
-        <h2>Comments</h2>
+        <h2 style="text-decoration:underline;">Comments</h2>
             <%= form_for [@guitar, @comment] do |f| %>
                 <strong>Make Comment: </strong> <%= f.text_field :remark %>
                     <%= f.submit 'Comment' %>
@@ -44,10 +54,9 @@
                     <li><strong><%= comment.user.first_name %></strong>: <%= comment.remark %> - <%= comment.created_at.strftime('%I:%M%P, %m/%d/%y') %>
                     <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %></li>
                 <% end %>
-
             </ul>
             </div>
         </div>
     </div>
-</div>
+    </div>
 </div>
