@@ -1,6 +1,6 @@
 <h1 class="jumbotron" style="font-size: 5em">Edit Account</h1>
 <div class="jumbotron">
-<%= form_for @user, url: user_path(current_user), method: :get, html: { multipart: true } do |f| %>
+<%= form_for @user, html: { multipart: true } do |f| %>
     <div>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>

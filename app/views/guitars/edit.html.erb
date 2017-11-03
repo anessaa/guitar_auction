@@ -1,7 +1,7 @@
 <h1 class="jumbotron" style="font-size: 5em">Edit Guitar Auction</h1>
 
 <div class="jumbotron" style="text-align:center;">
-<%= form_for @guitar, edit_guitar_path, method: :get do |f| %>
+<%= form_for @guitar, html: { multipart: true } do |f| %>
     <div>
         <%= f.label :brand %>
         <%= f.text_field :brand %>

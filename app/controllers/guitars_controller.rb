@@ -44,6 +44,7 @@ class GuitarsController < ApplicationController
     end
 
     def update 
+        @guitar = Guitar.find(params[:id])
         if @guitar.update_attributes(guitar_params)
             redirect_to guitar_path
         else
