@@ -11,8 +11,8 @@
 <% @guitars_won.each do |guitar| %>
     <div  class="panel panel-default">
         <div class="panel-body">
-            <ul>
-                <li><%= guitar.brand %> - <%= guitar.style %></li>
+            <ul>    
+                <h2 class="guitar_header"><%= link_to(guitar.brand, guitar_path(guitar)) %> <%= link_to(guitar.style, guitar_path(guitar)) %></h2>
                 <li>Auction Ended: <%= guitar.auction_end.strftime("%B %d, %Y") %></li>
             </ul>
             <%= image_tag "#{guitar.image}" %>

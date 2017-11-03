@@ -2,7 +2,7 @@
 
 
 <%= form_tag({}, {url: guitars_path, method: "get"}) do %>
-    Select a Brand: <%= collection_select(:guitar, :brand, Guitar.active.to_a.uniq {|guitar| guitar.brand}, :brand, :brand, {include_blank: "All Brands", selected: params[:guitar] && params[:guitar][:brand]},
+    <h4 class="edit_guitar">Select a Brand</h4>&nbsp&nbsp&nbsp<%= collection_select(:guitar, :brand, Guitar.active.to_a.uniq {|guitar| guitar.brand}, :brand, :brand, {include_blank: "All Brands", selected: params[:guitar] && params[:guitar][:brand]},
      onchange: "document.querySelector('form').submit()") %>
 <% end %>
 

@@ -22,11 +22,13 @@
         <%= f.label :image %>
         <%= f.file_field :image %>
     </div>
-    <%= f.submit "Update" %>
+    <br>
+    <%= f.submit "Update", class:"btn btn-success" %> &nbsp;&nbsp;|&nbsp;&nbsp; <%= link_to 'Delete', guitar_path(@guitar), method: :delete, data: { confirm: 'Are you sure you want to delete this auction?' }, class:"btn btn-danger" %>
+
 <% end %>
     <br>
-    <%= link_to 'Delete', guitar_path(@guitar), method: :delete, data: { confirm: 'Are you sure you want to delete this auction?' } %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <br>
+    
     <%= link_to 'Back', guitars_path %>
 
 </div>
