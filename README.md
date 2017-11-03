@@ -1,26 +1,20 @@
-# README
+# Guitars Auction
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* * *
 
-Things you may want to cover:
+Guitars Auction is a place to find and bid on high-end guitars. A user can bid on guitars until the auction end date and create auctions for other users to bid on.
 
-* Ruby version
+![Alt text](https://s3-us-west-1.amazonaws.com/guitarauction/guitars/images/000/000/003/original/guitarAuction_screenshot.png)
 
-* System dependencies
+## Technologies Used:
+* HTML / CSS / Bootstrap 
+* JavaScript / jQuery 
+* Ruby / Ruby on Rails 
+* Heroku
 
-* Configuration
+Visit Guitars Auction:
+<https://warm-spire-47160.herokuapp.com/> <br>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+Trello Workspace: 
+<https://trello.com/b/NgJ5NVq4/auction>
 
