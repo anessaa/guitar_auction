@@ -8,14 +8,14 @@
 
 
 
-    <% @guitars.each do |guitar| %>
-        <div  class="panel panel-default">
-            <div class="panel-body">
-                <div>
+<% @guitars.each do |guitar| %>
+    <div  class="panel panel-default">
+        <div class="panel-body">
+            <div>
                 <h1 class="guitar_header"><%= link_to(guitar.brand, guitar_path(guitar)) %> <%= link_to(guitar.style, guitar_path(guitar)) %> </h1>
                 <h3>Auction Ends: <%= guitar.auction_end.strftime("%B #{guitar.auction_end.day.ordinalize}, %Y") %> </h3>
                 <%= image_tag "#{guitar.image}" %>
-                </div>
+            </div>
             </div>
         </div>
-    <% end %>
+<% end %>

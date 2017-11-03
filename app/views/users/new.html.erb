@@ -1,7 +1,7 @@
 <h1 class="jumbotron" style="font-size: 3em">Sign Up</h1>
 
-    <%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
     <div>
         <h3>Form is invalid</h3> 
         <ul>
@@ -42,4 +42,4 @@
     </div>
 
     <div><%= f.submit 'Register', class:"btn-success" %></div>
-    <% end %>
+<% end %>
